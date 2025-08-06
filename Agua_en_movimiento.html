@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agua en Movimiento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header id="video-header">
+        
+        <nav class="navbar">
+            <h1> </h1>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Modulos</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="video-container">
+        <video autoplay loop muted>
+            <source src="/Img/Agua_en_movimiento.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+        <div class="overlay" onclick="openModal()"></div>
+        <!-- Botón para abrir el modal -->
+        <button onclick="openModal()"><i class="bi bi-play"></i></button>
+
+    </header>
+    
+    <!-- Modal para el video de YouTube -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="youtubeVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Sección de bienvenida -->
+    <section id="bienvenida">
+        <h2>Bienvenida</h2>
+        <p>El proyecto “Hacia una gestión SMART y Sostenible del agua en comunidades de Centroamérica...</p>
+    </section>
+
+    <!-- Sección de módulos -->
+    <section id="modulos">
+        <h2>Módulos</h2>
+        <div class="modulos-container">
+            <a href="modulo1.html" class="modulo">
+                <img src="img/modulo1.png" alt="Módulo 1">
+                <p>Agua en Movimiento</p>
+            </a>
+            <a href="modulo2.html" class="modulo">
+                <img src="img/modulo2.png" alt="Módulo 2">
+                <p>Agua para todas las personas</p>
+            </a>
+            <a href="modulo3.html" class="modulo">
+                <img src="img/modulo3.png" alt="Módulo 3">
+                <p>Agua limpia</p>
+            </a>
+            <a href="modulo4.html" class="modulo">
+                <img src="img/modulo4.png" alt="Módulo 4">
+                <p>Agua para siempre</p>
+            </a>
+            <a href="modulo5.html" class="modulo">
+                <img src="img/modulo5.png" alt="Módulo 5">
+                <p>El planeta tiene sed</p>
+            </a>
+            <a href="modulo6.html" class="modulo">
+                <img src="img/modulo6.png" alt="Módulo 6">
+                <p>Recuperemos el agua</p>
+            </a>
+            <a href="modulo7.html" class="modulo">
+                <img src="img/modulo7.png" alt="Módulo 7">
+                <p>El agua como derecho</p>
+            </a>
+            <a href="modulo8.html" class="modulo">
+                <img src="img/modulo8.png" alt="Módulo 8">
+                <p>El agua un bien común</p>
+            </a>
+        </div>
+    </section>
+    
+    
+
+    <!-- Sección de cierre -->
+    <section id="cierre">
+        <h2>Cierre</h2>
+        <p>El final de esta exhibición es solo el comienzo de un compromiso más profundo con el recurso más valioso...</p>
+    </section>
+
+    <!-- Sección de reserva -->
+    <section id="reserva">
+        <h2>Reserva la Fecha</h2>
+        <p>Para visitas en grupo, reserve el día y horario de su interés.</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <img src="Img/CINTILLO LOGOS PROYECTO 44GT.png" alt="Logo del Proyecto" class="footer">
+    </footer>
+
+  
+</body>
+</html>

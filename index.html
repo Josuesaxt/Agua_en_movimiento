@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agua en Movimiento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #3B1688, #2175C6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        #cuenta-regresiva-container {
+            position: relative;
+            max-width: 90%;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 10vw; /* Escalado dinámico */
+            font-weight: 900;
+            color: #a7abaf82;
+            -webkit-background-clip: text;
+            animation: water 15s infinite;
+        }
+
+        #texto-arriba, #texto-abajo {
+            font-size: 5vw; /* Se ajusta a la pantalla */
+            font-weight: bold;
+        }
+
+        /* Ajustes para dispositivos pequeños */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 12vw;
+            }
+            #texto-arriba, #texto-abajo {
+                font-size: 4vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 14vw;
+            }
+            #texto-arriba, #texto-abajo {
+                font-size: 3.5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cuenta-regresiva-container">
+        <p id="texto-arriba">¡Falta poco para el evento!</p>
+        <h1 id="cuenta-regresiva"></h1>
+        <p id="texto-abajo">¡Nos vemos pronto!</p>
+    </div>
+
+    <script>
+        function actualizarCuentaRegresiva() {
+            const fechaObjetivo = new Date("2025-03-26T00:00:00").getTime();
+            const intervalo = setInterval(() => {
+                const ahora = new Date().getTime();
+                const diferencia = fechaObjetivo - ahora;
+
+                if (diferencia <= 0) {
+                    clearInterval(intervalo);
+                    window.location.href = "Agua_en_movimiento.html";
+
+                    return;
+                }
+
+                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+                
+                document.getElementById("cuenta-regresiva").textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+            }, 1000);
+        }
+        
+        document.addEventListener("DOMContentLoaded", actualizarCuentaRegresiva);
+
+    
+    </script>
+</body>
+</html>
